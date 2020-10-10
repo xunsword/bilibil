@@ -1,5 +1,7 @@
 # B站上传视频小工具
 
+<img src="./cover.png" width=500 height=300/>
+
 项目地址: <https://gitee.com/nbodyfun/bilibili_video_uploader>
 
 ## 介绍
@@ -9,7 +11,7 @@
 
 作者：**NBody编程那些事**
 
-<img src="./my_qrcode.jpg" width=250 height=300/>
+<img src="./img/my_qrcode.jpg" width=250 height=300/>
 
 求关注～
 
@@ -62,11 +64,11 @@ optional arguments:
 
 首先我们可以在链接栏左侧看到一个小锁，如果你没有使用HTTPS，那么可能会显示 **不安全** 的字样，点击以后，下面有个Cookies。
 
-![](./step1.png)
+![](./img/step1.png)
 
 点开后，我们在下面找到以下两个键对应的值，分别是 SESSDATA 和 bili_jct，这里注意一下，bili_jct 就是 CSRF 。
 
-![](./step2.png)
+![](./img/step2.png)
 
 ## 示例
 
