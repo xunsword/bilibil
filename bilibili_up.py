@@ -394,8 +394,3 @@ def script_main():
 
 if __name__ == '__main__':
     script_main()
-    # logging.basicConfig(level=logging.INFO)
-    # BiliAPI(
-    #     'b1bd0670,1617844738,c524c*a1',
-    #     'ac32094502a5639771273e7b18554cf3'
-    # ).publish_video('./当你养狗后，就别想安静吃零食了.mp4')
