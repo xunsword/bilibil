@@ -1,38 +1,73 @@
 # B站上传视频小工具
 
-#### 介绍
-一个Bilibili视频上传的小工具 :) 
-2020/10/10测试有效。
+## 介绍
+**一个Bilibili视频上传的小工具 :)**
 
-#### 软件架构
-软件架构说明
+2020/10/10测试有效, 有问题不妨issue～
 
+作者：**NBody编程那些事**
 
-#### 安装教程
+<img src="./my_qrcode.jpg" width=250 height=300/>
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+求关注～
 
-#### 使用说明
+## 功能
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 上传并发布视频
+2. 支持指定标题、视频简介
+3. 支持指定分区、标签
+4. 支持选择自制或转载(转载可写来源)
+5. 查看所有分区
+6. 可以当命令行工具使用，也可以代码调用
 
-#### 参与贡献
+## 使用帮助
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+```
+usage: bilibili_up.py [-h] [-c COPYRIGHT] [-s SOURCE] [-t TITLE] [--desc DESC]
+                      [-d] [-l] [-tid TYPEID] [-ta TAGS] [-sd SESSDATA]
+                      [-bj BILI_JCT]
+                      [video_path]
 
+一个B站上传发布视频的小工具 :)
 
-#### 特技
+positional arguments:
+  video_path            视频文件路径
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+optional arguments:
+  -h, --help            show this help message and exit
+  -c COPYRIGHT, --copyright COPYRIGHT
+                        类型: 1为自制 2为转载。默认为2
+  -s SOURCE, --source SOURCE
+                        来源声明(转载必要), 默认为"来源于网络"
+  -t TITLE, --title TITLE
+                        标题, 不加即为视频文件名
+  --desc DESC           视频描述, 默认为空
+  -d, --debug           调试模式，更详细的输出
+  -l, --typelist        查看分区列表
+  -tid TYPEID, --typeid TYPEID
+                        视频分区id(使用-l参数查看), 不指定则使用推荐分区
+  -ta TAGS, --tags TAGS
+                        视频标签, 英文逗号分隔, 不指定则使用推荐标签
+  -sd SESSDATA, --sessdata SESSDATA
+                        身份验证cookie(上传必要), 浏览器cookies中获取
+  -bj BILI_JCT, --bili_jct BILI_JCT
+                        CSRF身份验证cookie(上传必要), 浏览器cookies中获取
+```
+
+## 获取 SESSDATA 和 CSRF
+
+这里以 **谷歌浏览器** 为例。
+
+首先我们可以在链接栏左侧看到一个小锁，如果你没有使用HTTPS，那么可能会显示 **不安全** 的字样，点击以后，下面有个Cookies。
+
+![](./step1.png)
+
+点开后，我们在下面找到以下两个键对应的值，分别是 SESSDATA 和 bili_jct，这里注意一下，bili_jct 就是 CSRF 。
+
+![](./step2.png)
+
+## 示例
+
+```
+python bilibili_up.py -sd 你的sessdata -bj 你的bili_jct demo.mp4
+```
