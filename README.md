@@ -1,5 +1,7 @@
 # B站上传视频小工具
 
+项目地址: <https://gitee.com/nbodyfun/bilibili_video_uploader>
+
 ## 介绍
 **一个Bilibili视频上传的小工具 :)**
 
