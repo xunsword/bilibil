@@ -108,6 +108,7 @@ class BiliAPI(object):
             chunk_size=chunk_size,
             chunks=chunks
         )
+        fileio.close()
 
         # step 4
         self.upload_finish(upos_uri=upos_uri, auth=auth, filename=filename,

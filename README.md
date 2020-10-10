@@ -75,3 +75,7 @@ optional arguments:
 ```
 python bilibili_up.py -sd 你的sessdata -bj 你的bili_jct demo.mp4
 ```
+
+## 接口分析
+
+Want to Know More？ Go -> [B站视频发布接口分析.md](./B站视频发布接口分析.md)
