@@ -1,18 +1,17 @@
 # B站视频发布接口分析
 
 # 目录
-
-- 获取登录Cookies
-- preupload预上传
-- step1 准备上传视频
-- step2 分批上传视频
-- step3 通知上传完毕
-- 轮询获取视频封面
-- 选择推荐分区
-- 选择推荐标签
-- 预发布
-- 发布视频
-- 完整代码
+- [获取登录Cookies](#获取登录cookies)
+- [preupload预上传](#preupload预上传)
+- [step1 准备上传视频](#step1-准备上传视频)
+- [step2 分批上传视频](#step2-分批上传视频)
+- [step3 通知上传完毕](#step3-通知上传完毕)
+- [轮询获取视频封面](#轮询获取视频封面)
+- [选择推荐分区](#选择推荐分区)
+- [选择推荐标签](#选择推荐标签)
+- [预发布](#预发布)
+- [发布视频](#发布视频)
+- [完整代码](#完整代码)
 
 # 获取登录Cookies
 
@@ -36,15 +35,15 @@
 
 # preupload预上传
 
-请求方法: `GET`
+**请求方法**: `GET`
 
-请求接口: `https://member.bilibili.com/preupload`
+**请求接口**: `https://member.bilibili.com/preupload`
 
-请求体:
+**请求体**:
 
 ![](./img/preupload_params.png)
 
-响应体:
+**响应体**:
 
 ![](./img/preupload_response.png)
 
@@ -55,21 +54,21 @@
 
 # step1 准备上传视频
 
-请求方法: `POST`
+**请求方法**: `POST`
 
-请求接口: `https://upos-sz-upcdnbda2.bilivideo.com/[upos_uri]`
+**请求接口**: `https://upos-sz-upcdnbda2.bilivideo.com/[upos_uri]`
 
 **替换上面`[upos_uri]`为`preupload预上传接口`响应体中`upos_uri`的`upos://`的后面部份，比如`https://upos-sz-upcdnbda2.bilivideo.com/ugcboss/m201010a23h35mci3cejzh2xe4a6gwq1.mp4`**
 
-请求头:
+**请求头**:
 
 ![](./img/step1_headers.png)
 
-请求体:
+**请求体**:
 
 ![](./img/step1_params.png)
 
-响应体:
+**响应体**:
 
 ![](./img/step1_response.png)
 
@@ -77,13 +76,13 @@
 
 **重难点**
 
-请求方法: `PUT`
+**请求方法**: `PUT`
 
-请求接口: `同step1接口`
+**请求接口**: `同step1接口`
 
-请求头: `同step1接口`
+**请求头**: `同step1接口`
 
-请求体(分两个部份): 
+**请求体(分两个部份)**: 
 
 ![](./img/step2_params.png)
 
@@ -99,13 +98,13 @@
 
 # step3 通知上传完毕
 
-请求方法: `POST`
+**请求方法**: `POST`
 
-请求接口: `同step1接口`
+**请求接口**: `同step1接口`
 
-请求头: `同step1接口`
+**请求头**: `同step1接口`
 
-请求体(分两个部份): 
+**请求体(分两个部份)**: 
 
 ![](./img/step3_params.png)
 
@@ -119,13 +118,13 @@ json形式的请求体可以用`requests.post的json`参数传递
 
 # 轮询获取视频封面
 
-请求方法: `GET`
+**请求方法**: `GET`
 
-请求接口: `https://member.bilibili.com/x/web/archive/recovers?fns=[bfilename]`
+**请求接口**: `https://member.bilibili.com/x/web/archive/recovers?fns=[bfilename]`
 
 注意把`[bfilename]`替换成在B站的视频文件名
 
-响应体:
+**响应体**:
 
 ![](./img/cover_response.png)
 
@@ -133,11 +132,11 @@ json形式的请求体可以用`requests.post的json`参数传递
 
 # 选择推荐分区
 
-请求方法: `GET`
+**请求方法**: `GET`
 
-请求接口: `https://member.bilibili.com/x/web/archive/typeid`
+**请求接口**: `https://member.bilibili.com/x/web/archive/typeid`
 
-请求体:
+**请求体**:
 
 ![](./img/type_params.png)
 
@@ -146,21 +145,21 @@ PS:
 1. `groupid`不清楚干嘛用的, 目前遇到可以固定是0或1
 2. `vfea`不清楚干嘛用的, 空字符串即可
 
-响应体:
+**响应体**:
 
 ![](./img/type_response.png)
 
 # 选择推荐标签
 
-请求方法: `GET`
+**请求方法**: `GET`
 
-请求接口: `https://member.bilibili.com/x/web/archive/typeid`
+**请求接口**: `https://member.bilibili.com/x/web/archive/typeid`
 
-请求体:
+**请求体**:
 
 ![](./img/tags_params.png)
 
-响应体:
+**响应体**:
 
 ![](./img/tags_response.png)
 
@@ -168,9 +167,9 @@ PS: 可以用列表推导式将标签字符串存于列表中，再用字符串`
 
 # 预发布
 
-请求方法: `GET`
+**请求方法**: `GET`
 
-请求接口: `https://member.bilibili.com/x/geetest/pre/add`
+**请求接口**: `https://member.bilibili.com/x/geetest/pre/add`
 
 PS: 没啥好讲的, 直接`get`这个链接，它的响应体也没什么有用的东西
 
@@ -178,9 +177,9 @@ PS: 没啥好讲的, 直接`get`这个链接，它的响应体也没什么有用
 
 经过前面的"过五关斩六将"，终于到了最后一步了
 
-请求方法: `POST`
+**请求方法**: `POST`
 
-请求接口: `https://member.bilibili.com/x/vu/web/add?csrf=[bili_jct]`
+**请求接口**: `https://member.bilibili.com/x/vu/web/add?csrf=[bili_jct]`
 
 **注意替换链接中`csrf`参数为`bili_jct`(一开始需要的两个Cookies的中其一), 替换`[bili_jct]`!**
 
