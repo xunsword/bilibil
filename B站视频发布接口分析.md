@@ -58,7 +58,7 @@
 
 **请求接口**: `https://upos-sz-upcdnbda2.bilivideo.com/[upos_uri]`
 
-**替换上面`[upos_uri]`为`preupload预上传接口`响应体中`upos_uri`的`upos://`的后面部份，比如`https://upos-sz-upcdnbda2.bilivideo.com/ugcboss/m201010a23h35mci3cejzh2xe4a6gwq1.mp4`**
+替换上面`[upos_uri]`为`preupload预上传接口`响应体中`upos_uri`的`upos://`的后面部份，比如`https://upos-sz-upcdnbda2.bilivideo.com/ugcboss/m201010a23h35mci3cejzh2xe4a6gwq1.mp4`
 
 **请求头**:
 
@@ -108,7 +108,7 @@
 
 ![](./img/step3_params.png)
 
-**PS: 上图没有用框框住的参数，都是固定写死**
+PS: 上图没有用框框住的参数，都是固定写死
 
 ![](./img/step3_body.png)
 
@@ -181,9 +181,9 @@ PS: 没啥好讲的, 直接`get`这个链接，它的响应体也没什么有用
 
 **请求接口**: `https://member.bilibili.com/x/vu/web/add?csrf=[bili_jct]`
 
-**注意替换链接中`csrf`参数为`bili_jct`(一开始需要的两个Cookies的中其一), 替换`[bili_jct]`!**
+注意替换链接中`csrf`参数为`bili_jct`(一开始需要的两个Cookies的中其一)
 
-请求体(JSON):
+**请求体(JSON)**:
 
 ![](./img/add_body.png)
 
