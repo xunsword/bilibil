@@ -132,7 +132,7 @@ class BiliAPI(object):
         # 发布视频
         self.pre_add()
         res = self.add(bfilestem=bfilestem, filestem=filestem,
-                       typeid=typeid, tags=tags_text, copyright=acopyright, desc=adesc, cover_url=cover_url)
+                       typeid=typeid, tags=tags_text, copyright=acopyright, desc=adesc, cover_url=cover_url, source=asource)
         aid = res['data']['aid']
         bvid = res['data']['bvid']
         self.logger.info(
