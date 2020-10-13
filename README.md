@@ -2,7 +2,9 @@
 
 <img src="./cover.png" width=500 height=300/>
 
-项目地址: <https://gitee.com/nbodyfun/bilibili_video_uploader>
+**项目地址**: <https://gitee.com/nbodyfun/bilibili_video_uploader>
+
+**视频地址**: <https://www.bilibili.com/video/BV1qt4y1v76u/>
 
 ## 介绍
 **一个Bilibili视频上传的小工具 :)**
